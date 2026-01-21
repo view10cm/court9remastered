@@ -31,10 +31,8 @@ Organize and manage tournaments with automated bracket generation, participant r
 ## Technology Stack
 
 - **Backend**: Laravel 9+, PHP 8.1+, MySQL
-- **Frontend**: Tailwind CSS, JavaScript (ES6+), Alpine.js/Vue.js
+- **Frontend**: Tailwind CSS, JavaScript (ES6+)
 - **Tools**: Composer, npm/Yarn, Git
-
-## Installation
 
 ### Prerequisites
 - PHP >= 8.1
@@ -42,8 +40,75 @@ Organize and manage tournaments with automated bracket generation, participant r
 - Node.js & npm
 - MySQL >= 5.7
 
-### Setup Instructions
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/court9-badminton-system.git
-   cd court9-badminton-system
+## Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/ayumihidalgo/E-skolarian.git
+
+# Install PHP dependencies
+composer install 
+
+# Install NPM dependencies
+npm install
+
+# Create a copy of your .env file
+cp .env.example .env
+
+# Generate an app encryption key
+php artisan key:generate
+
+# Configure your database in .env (or you can copy this)
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=eskolarian
+DB_USERNAME=root
+DB_PASSWORD=
+
+# Run database migrations
+php artisan migrate
+
+# Compile assets
+npm run dev
+
+# Run server
+php artisan serve
+```
+
+2. Update the php.ini File
+Locate the php.ini file used by your PHP installation. You can find it by running the following command in your terminal:
+
+``` bash 
+php --ini
+```
+Open the php.ini file in a text editor. 
+
+Remove the semicolon of the following:
+- ;extension=zip
+- ;extension=mbstring
+- ;extension=fileinfo
+- ;extension=curl
+
+3. Restart Your Web Server using 
+```bash
+php artisan serve
+```
+
+## Usage
+
+<details>
+<summary>Click to expand usage instructions</summary>
+
+1. Start the Laravel development server:
+   ```
+   php artisan serve
+   ```
+2. Start the compile of assets:
+  ```
+  npm run dev
+  ```
+3. Access the web interface at `http://localhost:8000`
+4. Make sure apache and mysql is running when you are using XAMPP
+5. Keep both 1 and 2 running on terminal during development
+
