@@ -62,7 +62,7 @@ php artisan key:generate
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=eskolarian
+DB_DATABASE=court9remastered
 DB_USERNAME=root
 DB_PASSWORD=
 
